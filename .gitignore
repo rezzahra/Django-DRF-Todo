@@ -1,0 +1,10 @@
+venv/
+/venv
+venv
+__pycache__
+__pycache__/
+.env
+Scripts
+Lib
+db.sqlite3
+.idea/
