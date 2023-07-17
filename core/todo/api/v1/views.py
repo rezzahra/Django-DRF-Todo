@@ -3,7 +3,7 @@ from rest_framework import viewsets
 from rest_framework import permissions, status
 from ...models import Task
 from .serializers import TaskSerializer
-from django.contrib.auth.models import User
+from accounts.models import User
 from django.shortcuts import get_object_or_404
 
 
@@ -25,8 +25,6 @@ class TasklModelViewSet(viewsets.ModelViewSet):
         task = get_object_or_404(Task, pk=self.kwargs["pk"])
         task.delete()
         return Response({'detail': 'task deleted successfully'})
-
-
 
 
 

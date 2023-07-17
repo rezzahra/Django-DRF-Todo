@@ -5,8 +5,9 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /code
 
+RUN pip freeze > requirements.txt
 COPY requirements.txt /code/
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt --trusted-host pypi.org --trusted-host files.pythonhosted.org
 
 COPY ./core /code/
 
